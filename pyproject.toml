@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lookahead-auditor"
+version = "0.1.0"
+description = "Find look-ahead and execution bias in backtest trade logs using OHLC bars."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["pandas>=2.0", "numpy>=1.22"]
+keywords = ["backtesting", "trading", "look-ahead bias", "metatrader", "quant"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+lookahead-audit = "lookahead_auditor.cli:main"
+
+[tool.setuptools]
+packages = ["lookahead_auditor"]
