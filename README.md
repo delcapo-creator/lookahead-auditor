@@ -6,6 +6,19 @@
 
 It works with any backtester that can export trades to CSV, including MetaTrader 5, Python/pandas engines, and custom RL environments.
 
+## The article
+
+The full story behind this tool, with MQL5 code, Strategy Tester results and a checklist:
+**[How a Look-Ahead Bug Turned a Profit Factor of 1.2 into 3.9, and How to Catch It Automatically](article/ARTICLE.md)**
+
+MetaTrader 5 versions of the check are in [`mql5/`](mql5/):
+
+| File | What it does |
+|---|---|
+| [`SameBarExitCheck.mqh`](mql5/SameBarExitCheck.mqh) | Include: pairs deals by position, reports same-bar exits, average bars in trade and profit factor |
+| [`SameBarExitCheck.mq5`](mql5/SameBarExitCheck.mq5) | Script: runs the check on your account history |
+| [`VirtualStopsDemo.mq5`](mql5/VirtualStopsDemo.mq5) | Expert Advisor that reproduces the bug in the Strategy Tester (`InpApplyGuard` on/off) |
+
 ## Why this exists
 
 I built an RL trading bot for XAUUSD. A backtest reported a **profit factor of 2.7–3.9** and the account balance reaching over **$200k**. The real numbers were a **profit factor of ~1.1–1.2** and **$17–21k**.
